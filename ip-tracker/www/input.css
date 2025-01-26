@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-gray: hsl(0, 0%, 59%);
+  --color-very-dark-gray: hsl(0, 0%, 17%);
+
+  --font-rubik: "Rubik", "serif"
+}

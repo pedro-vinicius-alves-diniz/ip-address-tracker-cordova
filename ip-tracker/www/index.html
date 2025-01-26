@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, viewport-fit=cover"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+    <link href="./output.css" rel="stylesheet" />
+
+    <title>Frontend Mentor | IP Address Tracker</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
+  <body class="font-rubik h-screen box-border">
+    <div class="app h-full" id="container-main">
+      <header
+        class="bg-[url('images/pattern-bg-mobile.png')] md:bg-[url('images/pattern-bg-desktop.png')] bg-cover bg-center h-[35%] flex flex-col items-center gap-5"
+      >
+        <h1 class="mt-4 text-white font-medium text-2xl">IP Address Tracker</h1>
+
+        <form class="w-full">
+          <div
+            class="flex rounded-xl overflow-hidden w-[500px] max-w-[80%] justify-self-center"
+          >
+            <input
+              id="inputIp"
+              type="text"
+              class="p-2 outline-none rounded-l-xl w-full placeholder:text-sm bg-white"
+              placeholder="Search for any IP address or domain"
+            />
+            <button class="p-4 bg-black rounded-r-xl cursor-pointer" id="btnSearch">
+              <img
+                src="images/icon-arrow.svg"
+                alt="Button Search"
+                class="bg-black"
+              />
+            </button>
+          </div>
+        </form>
+      </header>
+
+      <main
+        id="main"
+        class="h-[65%] w-full border border-transparent relative z-0"
+        style="border: 1px solid transparent"
+      >
+        <div
+          id="content-ip-domain"
+          class="max-w-[80%] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 py-6 md:px-4 text-center md:text-start bg-white rounded-xl -mt-20 md:-mt-10 shadow-lg z-50"
+          style="z-index: 99;"
+        >
+          <div>
+            <p class="text-xs text-dark-gray font-bold">IP Address</p>
+            <span class="text-very-dark-gray font-semibold text-lg" id="ip"
+              >-</span
+            >
+          </div>
+          <div>
+            <p class="text-xs text-dark-gray font-bold">Location</p>
+            <span
+              class="text-very-dark-gray text-lg font-semibold"
+              id="location"
+              >-</span
+            >
+          </div>
+          <div>
+            <p class="text-xs text-dark-gray font-bold">Timezone UTC</p>
+            <span
+              class="text-very-dark-gray text-lg font-semibold"
+              id="timezone"
+              >-</span
+            >
+          </div>
+          <div>
+            <p class="text-xs text-dark-gray font-bold">ISP</p>
+            <span class="text-very-dark-gray text-lg font-semibold" id="isp"
+              >-</span
+            >
+            <!-- add offset value dynamically using the API -->
+          </div>
+        </div>
+
+        <div
+          id="map"
+          class="absolute bg-zinc-200 top-0 right-0 bottom-0 left-0 border border-transparent z-[-1]"
+        ></div>
+      </main>
+    </div>
+
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script type="module" src="js/scritps.js"></script>
+  </body>
+</html>
