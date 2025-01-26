@@ -83,6 +83,11 @@ function addMap(lat, lng) {
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
   var marker = L.marker([lat, lng]).addTo(map);
+
+  var newLatitude = lat + 0.01;
+  map.setView([newLatitude, lng], 13)
 }
+
+
 
 require();
